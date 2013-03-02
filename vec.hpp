@@ -119,7 +119,7 @@ public:
     using vec2 = vec<float, 2u>;
     using vec3 = vec<float, 3u>;
     using vec4 = vec<float, 4u>;
-    }
+    } //fvec namespace
     /** \namespace dvec
     *   \brief double-precision floating point vectors
     *
@@ -130,7 +130,7 @@ public:
     using dvec2 = vec<double, 2u>;
     using dvec3 = vec<double, 3u>;
     using dvec4 = vec<double, 4u>;
-    }
+    } //dvec namespace
     /** \namespace bvec
     *   \brief Boolean vectors
     *
@@ -141,7 +141,7 @@ public:
     using bvecd2 = vec<bool, 2u>;
     using bvecd3 = vec<bool, 3u>;
     using bvecd4 = vec<bool, 4u>;
-    }
+    } //bvec namespace
     /** \namespace ivec
     *   \brief Signed and unsigned integer vectors
 
@@ -156,7 +156,7 @@ public:
     using uvec2 = vec<unsigned int, 2u>;
     using uvec3 = vec<unsigned int, 3u>;
     using uvec4 = vec<unsigned int, 4u>;
-    }
+    } //ivec namespace
 
 
 } //namespace sbt
