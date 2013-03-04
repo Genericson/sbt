@@ -121,6 +121,17 @@ T vec<T, L>::norm() const {
     }
     return std::sqrt(result);
 } //norm()
+
+template <typename T, unsigned int L>
+vec<T, L>  vec<T, L>::normalize() const {
+    T n = this->norm();
+    vec<T, L> result = *this;
+    for(unsigned int i = 0; i < this->length(); i++) {
+        result[i] = result[i] / n;
+    }
+    return result;
+} //normalize()
+
 template <typename T, unsigned int L>
 vec<T, L>::~vec() {
 

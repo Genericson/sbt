@@ -94,9 +94,13 @@ public:
     */
     bool operator== (const vec<T, L>& v) const;
     /** Calculates the norm/magnitude of the vector
-    *   \param [out] the norm
+    *   \return returns the norm
     */
     T norm() const;
+    /** Calculates a unit vector in the direction of v
+    *   \return returns unit normal vector
+    */
+    vec<T, L> normalize() const;
     /** Destructor */
     ~vec();
 
