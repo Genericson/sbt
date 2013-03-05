@@ -34,7 +34,10 @@
 #ifndef vec_HPP_
 #define vec_HPP_
 
-/** \namespace sbt Sumbeard's Tools */
+/** \namespace sbt Sumbeard's Tools
+ *  \brief Sumbeard's tools
+ *  Currently only includes a vector template class
+ */
 namespace sbt {
 
 template <typename T, unsigned int L>
@@ -52,8 +55,8 @@ public:
 
     vec (const T v[L]);
     /** Access component directly (via reference).
-    *   \param [out] T returns reference to component at index
     *   \param [in]  index index of component (starting from 0)
+    *   \return T returns reference to component at index
     *   \warning This method does not check the index to be in bounds
     */
     T& operator[] (const unsigned int index);
@@ -64,7 +67,7 @@ public:
     */
     const T& operator[] (const unsigned int index) const;
     /** Returns the number of components/dimensions of the vector
-    *   \param [out] uint length
+    *   \return length
     */
     const unsigned int length() const;
     //-----------OPERATORS------------//
@@ -94,11 +97,11 @@ public:
     */
     bool operator== (const vec<T, L>& v) const;
     /** Calculates the norm/magnitude of the vector
-    *   \return returns the norm
+    *   \return norm of vector
     */
     T norm() const;
     /** Calculates a unit vector in the direction of v
-    *   \return returns unit normal vector
+    *   \return unit normal vector
     */
     vec<T, L> normalize() const;
     /** Destructor */
