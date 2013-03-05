@@ -1,4 +1,4 @@
-// A test program for sbt
+// A test program for sbt::vec
 //====================LICENSE====================//
 // Copyright (c) 2013, Harrison Leadlay
 // All rights reserved.
@@ -44,12 +44,15 @@ bool inputValid() {
 }
 
 void menu(int i) {
+    //assumes following input is good
+    //types assumed to be float by default
     switch (i) {
     case 0: //exit
         //opt is zero; loop will exit;
         break;
     case 1: //addition
         std::cout<<"( a + b ) where a and be are scalars"<<std::endl;
+
         break;
     case 2: //subtraction
         std::cout<<"( a - b ) where a and b are scalars"<<std::endl;
