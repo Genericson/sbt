@@ -39,13 +39,15 @@
  *  \brief Sumbeard's tools
  *  Currently only includes a vector template class
  */
-namespace sbt {
+namespace sbt
+{
 
 template <typename T, unsigned int L>
 
-class vec {
-/** A vector (as in mathematics and physics) template class
-*/
+class vec
+{
+    /** A vector (as in mathematics and physics) template class
+    */
 private:
     const static unsigned int len = L;
     T d[L];
@@ -138,49 +140,53 @@ public:
 
 //=============Aliases ==============//
 
-    /**\brief single-precision floating point vectors
-    *
-    *  This name space includes separate classes for `float`
-    *  type 2-4 dimensional vectors
-    */
-    namespace fvec {
-    using vec2 = vec<float, 2u>;
-    using vec3 = vec<float, 3u>;
-    using vec4 = vec<float, 4u>;
-    } //fvec namespace
-    /**\brief double-precision floating point vectors
-    *
-    *  This name space includes separate classes for `double`
-    *  type 2-4 dimensional vectors
-    */
-    namespace dvec {
-    using dvec2 = vec<double, 2u>;
-    using dvec3 = vec<double, 3u>;
-    using dvec4 = vec<double, 4u>;
-    } //dvec namespace
-    /**\brief Boolean vectors
-    *
-    *  This name space includes separate classes for `bool`
-    *  type 2-4 dimensional vectors
-    */
-    namespace bvec {
-    using bvecd2 = vec<bool, 2u>;
-    using bvecd3 = vec<bool, 3u>;
-    using bvecd4 = vec<bool, 4u>;
-    } //bvec namespace
-    /**\brief Signed and unsigned integer vectors
-    *  This name space includes separate classes for signed and unsigned
-    *  `int`
-    *  type 2-4 dimensional vectors
-    */
-    namespace ivec {
-    using ivec2 = vec<int, 2>;
-    using ivec3 = vec<int, 3>;
-    using ivec4 = vec<int, 4>;
-    using uvec2 = vec<unsigned int, 2u>;
-    using uvec3 = vec<unsigned int, 3u>;
-    using uvec4 = vec<unsigned int, 4u>;
-    } //ivec namespace
+/**\brief single-precision floating point vectors
+*
+*  This name space includes separate classes for `float`
+*  type 2-4 dimensional vectors
+*/
+namespace fvec
+{
+using vec2 = vec<float, 2u>;
+using vec3 = vec<float, 3u>;
+using vec4 = vec<float, 4u>;
+} //fvec namespace
+/**\brief double-precision floating point vectors
+*
+*  This name space includes separate classes for `double`
+*  type 2-4 dimensional vectors
+*/
+namespace dvec
+{
+using dvec2 = vec<double, 2u>;
+using dvec3 = vec<double, 3u>;
+using dvec4 = vec<double, 4u>;
+} //dvec namespace
+/**\brief Boolean vectors
+*
+*  This name space includes separate classes for `bool`
+*  type 2-4 dimensional vectors
+*/
+namespace bvec
+{
+using bvecd2 = vec<bool, 2u>;
+using bvecd3 = vec<bool, 3u>;
+using bvecd4 = vec<bool, 4u>;
+} //bvec namespace
+/**\brief Signed and unsigned integer vectors
+*  This name space includes separate classes for signed and unsigned
+*  `int`
+*  type 2-4 dimensional vectors
+*/
+namespace ivec
+{
+using ivec2 = vec<int, 2>;
+using ivec3 = vec<int, 3>;
+using ivec4 = vec<int, 4>;
+using uvec2 = vec<unsigned int, 2u>;
+using uvec3 = vec<unsigned int, 3u>;
+using uvec4 = vec<unsigned int, 4u>;
+} //ivec namespace
 
 
 } //namespace sbt
