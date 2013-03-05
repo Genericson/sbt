@@ -1,3 +1,4 @@
+//vec.inl
 //====================LICENSE====================//
 // Copyright (c) 2013, Harrison Leadlay
 // All rights reserved.
