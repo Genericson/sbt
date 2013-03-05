@@ -1,6 +1,7 @@
+/////////////////////////////////////////////////
 //vec.inl
 // Note: do not include this file directly, include vec.hpp
-//====================LICENSE====================//
+/////////////////////////////////////////////////
 // Copyright (c) 2013, Harrison Leadlay
 // All rights reserved.
 //
@@ -25,10 +26,9 @@
 // WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT (INCLUDING NEGLIGENCE OR
 // OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN IF
 // ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
-//===============================================//
+/////////////////////////////////////////////////
 
 #include <iostream>
-//#include <string>
 #include <cmath>
 #include <stdexcept>
 
@@ -168,9 +168,10 @@ vec<T, L>::~vec()
 
 } //~vec()
 
-//-------------STATIC FUNCTIONS--------------//
-/** Returns dot product of two vectors
-*/
+//=============================================//
+// STATIC FUNCTIONS
+//=============================================//
+
 template <typename T, unsigned int L>
 T dot(const vec<T, L>& a, const vec<T, L>& b)
 {
@@ -182,9 +183,6 @@ T dot(const vec<T, L>& a, const vec<T, L>& b)
     return result;
 } //dot(vec, vec)
 
-/** Cross product for 3-dimensional vectors
-*   \param [out] vector orthogonal to a and b
-*/
 template <typename T, unsigned int L>
 vec<T, 3u> cross(const vec<T, 3u>& a, const vec<T, 3u>& b)
 {

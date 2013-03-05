@@ -1,5 +1,9 @@
-//vec.hpp
-//====================LICENSE====================//
+#ifndef vec_HPP_
+#define vec_HPP_
+
+/////////////////////////////////////////////////
+// vec.hpp
+/////////////////////////////////////////////////
 // Copyright (c) 2013, Harrison Leadlay
 // All rights reserved.
 //
@@ -24,30 +28,31 @@
 // WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT (INCLUDING NEGLIGENCE OR
 // OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN IF
 // ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
-//===============================================//
+/////////////////////////////////////////////////
 
-/**
- * \mainpage Sumbeard's Tools (sbt)
- *
- * \version    0.1a
- */
+/////////////////////////////////////////////////
+/// \mainpage Sumbeard's Tools (sbt)
+///
+/// \version    0.1a
+///
+/////////////////////////////////////////////////
 
-#ifndef vec_HPP_
-#define vec_HPP_
-
-/** \namespace sbt Sumbeard's Tools
- *  \brief Sumbeard's tools
- *  Currently only includes a vector template class
- */
+/////////////////////////////////////////////////
+/// \namespace sbt Sumbeard's Tools
+/// \brief Sumbeard's tools
+/// Currently only includes a vector template class
+/////////////////////////////////////////////////
 namespace sbt
 {
 
 template <typename T, unsigned int L>
 
+/////////////////////////////////////////////////
+/// \brief A vector (as in mathematics and physics) template class
+///
+/////////////////////////////////////////////////
 class vec
 {
-    /** A vector (as in mathematics and physics) template class
-    */
 private:
     const static unsigned int len = L;
     T d[L];
@@ -58,126 +63,184 @@ public:
 
     vec (const T v[L]);
 
-    /** Access component directly (via reference).
-    *   \param [in] index index of component (starting from 0)
-    *   \return Reference to component at index
-    *   \warning This method does not check the index to be in bounds
-    */
+    /////////////////////////////////////////////////
+    /// \brief Access component directly (via reference).
+    /// \param [in] index index of component (starting from 0)
+    /// \return Reference to component at index
+    /// \warning This method does not check the index to be in bounds
+    ///
+    /////////////////////////////////////////////////
     T& operator[] (const unsigned int index);
 
-    /** Access component directly (via reference) read-only.
-    *   \param [in] index index of component (starting from 0)
-    *   \return Reference to component at index
-    *   \warning This method does not check the index to be in bounds
-    */
+    /////////////////////////////////////////////////
+    /// \brief Access component directly (via reference) read-only.
+    /// \param [in] index index of component (starting from 0)
+    /// \return Reference to component at index
+    /// \warning This method does not check the index to be in bounds
+    ///
+    /////////////////////////////////////////////////
     const T& operator[] (const unsigned int index) const;
 
-    /** Returns a copy of component at index. Checks that index is within the
-    *   vector
-    *   \param [in] index index of component (starting from 0)
-    *   \return Copy of component at index
-    *   \exception out_of_bounds if index is too large
-    */
+    /////////////////////////////////////////////////
+    /// \brief Return a copy of component at index.
+    /// \param  index index of component (starting from 0)
+    ///
+    /// \return Copy of component at index
+    /// \exception out_of_bounds if index is too large
+    ///
+    /////////////////////////////////////////////////
     T get (const unsigned int index) const;
 
-    /** Returns the number of components/dimensions of the vector
-    *   \return length
-    */
+    /////////////////////////////////////////////////
+    /// Returns the number of components/dimensions of the vector
+    /// \return length
+    ///
+    /////////////////////////////////////////////////
     const unsigned int length () const;
 
-    //-----------OPERATORS------------//
+    //=============================================//
+    // OPERATORS
+    //=============================================//
 
-    /** Copy vector by component
-    *   \param v vector to copy
-    *   \return vector with value of v
-    */
+    /////////////////////////////////////////////////
+    /// Copy vector by component
+    ///  \param v vector to copy
+    ///  \return vector with value of v
+    ///
+    /////////////////////////////////////////////////
     const vec& operator= (const vec& v);
 
-    /** Copy array to vector by component
-    *   \param v array to copy
-    *   \return vector with value of
-    */
+    /////////////////////////////////////////////////
+    /// Copy array to vector by component
+    /// \param v array to copy
+    /// \return vector with value of
+    ///
+    /////////////////////////////////////////////////
     const vec& operator= (const T v[L]);
 
-    /** Multiply vectors component-component
-    *
-    */
+    /////////////////////////////////////////////////
+    /// \brief Multiply vectors component-component
+    /// \param v vec to multiply
+    /// \return
+    ///
+    /////////////////////////////////////////////////
     const vec operator* (const vec<T, L>& v) const;
 
-    /** Multiple vector by scalar */
+    /////////////////////////////////////////////////
+    /// \brief Multiple vector by scalar
+    /// \param scalar
+    /// \return
+    ///
+    /////////////////////////////////////////////////
     const vec operator* (const T& s) const;
-
-    /** Equals comparison
-    *   \return returns `true` if vectors are equal component-wise
-    *       `false` if any one set of components are not equal
-    *
-    *   <1, 2, 3> == <1, 2, 3> == true
-    *   <2, 1, 3> == <1, 2, 3> == false
-    *
-    *   \warning Consider floating-point error when using such types of vectors
-    */
+    /////////////////////////////////////////////////
+    /// \brief Equals comparison
+    /// \return returns `true` if vectors are equal component-wise
+    ///     `false` if any one set of components are not equal
+    ///   *   <1, 2, 3> == <1, 2, 3> == true
+    /// <2, 1, 3> == <1, 2, 3> == false
+    ///
+    /// \warning Consider floating-point error when using such types of vectors
+    ///
+    /////////////////////////////////////////////////
     bool operator== (const vec<T, L>& v) const;
 
-    /** Calculates the norm/magnitude of the vector
-    *   \return norm of vector
-    */
+    /////////////////////////////////////////////////
+    /// \brief Calculates the norm/magnitude of the vector
+    /// \return norm of vector
+    ///
+    /////////////////////////////////////////////////
     T norm() const;
 
-    /** Calculates a unit vector in the direction of v
-    *   \return unit normal vector
-    */
+    /////////////////////////////////////////////////
+    /// \brief Calculates a unit vector in the direction of v
+    /// \return unit normal vector
+    ///
+    /////////////////////////////////////////////////
     vec<T, L> normalize() const;
 
-    /** Destructor */
+    /////////////////////////////////////////////////
+    /// \brief Destructor
+    ///
+    /////////////////////////////////////////////////
     ~vec();
+    //=============================================//
+    // STATIC FUNCTIONS
+    //=============================================//
 
-    //===============STATIC FUNCTIONS================//
+    /////////////////////////////////////////////////
+    /// \brief Dot product
+    ///
+    /// \param a left vec argument
+    /// \param b right vec argument
+    /// \return dot product
+    ///
+    /////////////////////////////////////////////////
     static T dot(const vec<T, L>& a, const vec<T, L>& b);
 
+    /////////////////////////////////////////////////
+    /// \brief Cross product
+    ///
+    /// \param a left vec<T, 3u> argument
+    /// \param b right vec<T, 3u> argument
+    /// \return vec<T, 3u> orthogonal to a and b
+    ///
+    /////////////////////////////////////////////////
     static vec<T, 3u> cross(const vec<T, 3u>& a, const vec<T, 3u>& b);
 
 }; //class vec
 
-//=============Aliases ==============//
+//=============================================//
+// Template Aliases
+//=============================================//
 
-/**\brief single-precision floating point vectors
-*
-*  This name space includes separate classes for `float`
-*  type 2-4 dimensional vectors
-*/
+/////////////////////////////////////////////////
+/// \brief single-precision floating point vectors
+///
+/// This name space includes separate classes for `float`
+/// type 2-4 dimensional vectors
+///
+/////////////////////////////////////////////////
 namespace fvec
 {
 using vec2 = vec<float, 2u>;
 using vec3 = vec<float, 3u>;
 using vec4 = vec<float, 4u>;
 } //fvec namespace
-/**\brief double-precision floating point vectors
-*
-*  This name space includes separate classes for `double`
-*  type 2-4 dimensional vectors
-*/
+
+/////////////////////////////////////////////////
+/// \brief double-precision floating point vectors
+///
+/// This name space includes separate classes for `double`
+/// type 2-4 dimensional vectors
+///
+/////////////////////////////////////////////////
 namespace dvec
 {
 using dvec2 = vec<double, 2u>;
 using dvec3 = vec<double, 3u>;
 using dvec4 = vec<double, 4u>;
 } //dvec namespace
-/**\brief Boolean vectors
-*
-*  This name space includes separate classes for `bool`
-*  type 2-4 dimensional vectors
-*/
+
+/////////////////////////////////////////////////
+/// \brief Boolean vectors
+///
+/// This name space includes separate classes for `bool`
+/// type 2-4 dimensional vectors
+/////////////////////////////////////////////////
 namespace bvec
 {
 using bvecd2 = vec<bool, 2u>;
 using bvecd3 = vec<bool, 3u>;
 using bvecd4 = vec<bool, 4u>;
 } //bvec namespace
-/**\brief Signed and unsigned integer vectors
-*  This name space includes separate classes for signed and unsigned
-*  `int`
-*  type 2-4 dimensional vectors
-*/
+
+/////////////////////////////////////////////////
+/// \brief Signed and unsigned integer vectors
+/// This name space includes separate classes for signed and unsigned
+/// `int`
+/// type 2-4 dimensional vectors
+/////////////////////////////////////////////////
 namespace ivec
 {
 using ivec2 = vec<int, 2>;
@@ -191,8 +254,10 @@ using uvec4 = vec<unsigned int, 4u>;
 
 } //namespace sbt
 
-//=============INCLUDE IMPLEMENTATION==============//
+//=============================================//
+// INCLUDE IMPLEMENTATION
 // Template implementation inserted directly into header
+//=============================================//
 #include "vec.inl"
 
 #endif vec_HPP_
