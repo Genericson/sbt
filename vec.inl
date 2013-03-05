@@ -28,6 +28,7 @@
 #include <iostream>
 #include <string>
 #include <cmath>
+#include <stdexcept>
 
 namespace sbt {
 
@@ -58,12 +59,21 @@ vec<T, L>::vec (const T v[L]) {
 template <typename T, unsigned int L>
 T& vec<T, L>::operator[] (const unsigned int index) {
     return d[index];
-} //operator[](uint);
+} //operator[](uint)
 
 template <typename T, unsigned int L>
 const T& vec<T, L>::operator[] (const unsigned int index) const {
     return d[index];
-} //operator[](uint);
+} //operator[](uint)
+
+template <typename T, unsigned int L>
+T vec<T, L>::get (const unsigned int index) const {
+    if( index < this->length())
+        return d[index];
+    else
+        throw std::out_of_range("index too large"); //uint ensures not too small
+    std::cerr<<"Could not throw out_of_range exception!\n";
+} //get(uint)
 
 template <typename T, unsigned int L>
 const unsigned int vec<T, L>::length() const {

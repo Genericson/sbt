@@ -55,21 +55,26 @@ public:
 
     vec (const T v[L]);
     /** Access component directly (via reference).
-    *   \param [in]  index index of component (starting from 0)
-    *   \return T returns reference to component at index
+    *   \param [in] index index of component (starting from 0)
+    *   \return Reference to component at index
     *   \warning This method does not check the index to be in bounds
     */
     T& operator[] (const unsigned int index);
     /** Access component directly (via reference) read-only.
-    *   \param [out] T returns reference to component at index
-    *   \param [in]  index index of component (starting from 0)
+    *   \param [in] index index of component (starting from 0)
+    *   \return Reference to component at index
     *   \warning This method does not check the index to be in bounds
     */
     const T& operator[] (const unsigned int index) const;
+    /** Returns a copy of component at index
+    *   \param [in] index index of component (starting form 0)
+    *   \return Copy of component at index
+    */
+    T get (const unsigned int index) const;
     /** Returns the number of components/dimensions of the vector
     *   \return length
     */
-    const unsigned int length() const;
+    const unsigned int length () const;
     //-----------OPERATORS------------//
     /** Copy vector by component
     *
