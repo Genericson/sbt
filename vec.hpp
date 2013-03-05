@@ -66,9 +66,11 @@ public:
     *   \warning This method does not check the index to be in bounds
     */
     const T& operator[] (const unsigned int index) const;
-    /** Returns a copy of component at index
-    *   \param [in] index index of component (starting form 0)
+    /** Returns a copy of component at index. Checks that index is within the
+    *   vector
+    *   \param [in] index index of component (starting from 0)
     *   \return Copy of component at index
+    *   \exception out_of_bounds if index is too large
     */
     T get (const unsigned int index) const;
     /** Returns the number of components/dimensions of the vector

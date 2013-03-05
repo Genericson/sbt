@@ -86,7 +86,6 @@ int main()
     using namespace sbt::bvec; //     '      boolean-type  '        '
     using namespace sbt::ivec; //     '   (unsigned) integer-type ' '
 
-
     for(int opt = -1; opt != 0; )
     {
         cout<<" 1: +     2: -     3: *\n"
