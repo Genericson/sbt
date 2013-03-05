@@ -113,8 +113,7 @@ public:
 
 //=============Aliases ==============//
 
-    /** \namespace fvec
-    *   \brief single-precision floating point vectors
+    /**\brief single-precision floating point vectors
     *
     *  This name space includes separate classes for `float`
     *  type 2-4 dimensional vectors
@@ -124,8 +123,7 @@ public:
     using vec3 = vec<float, 3u>;
     using vec4 = vec<float, 4u>;
     } //fvec namespace
-    /** \namespace dvec
-    *   \brief double-precision floating point vectors
+    /**\brief double-precision floating point vectors
     *
     *  This name space includes separate classes for `double`
     *  type 2-4 dimensional vectors
@@ -135,8 +133,7 @@ public:
     using dvec3 = vec<double, 3u>;
     using dvec4 = vec<double, 4u>;
     } //dvec namespace
-    /** \namespace bvec
-    *   \brief Boolean vectors
+    /**\brief Boolean vectors
     *
     *  This name space includes separate classes for `bool`
     *  type 2-4 dimensional vectors
@@ -146,17 +143,15 @@ public:
     using bvecd3 = vec<bool, 3u>;
     using bvecd4 = vec<bool, 4u>;
     } //bvec namespace
-    /** \namespace ivec
-    *   \brief Signed and unsigned integer vectors
-
+    /**\brief Signed and unsigned integer vectors
     *  This name space includes separate classes for signed and unsigned
     *  `int`
     *  type 2-4 dimensional vectors
     */
     namespace ivec {
-    using ivec2 = vec<int, 2u>;
-    using ivec3 = vec<int, 3u>;
-    using ivec4 = vec<int, 4u>;
+    using ivec2 = vec<int, 2>;
+    using ivec3 = vec<int, 3>;
+    using ivec4 = vec<int, 4>;
     using uvec2 = vec<unsigned int, 2u>;
     using uvec3 = vec<unsigned int, 3u>;
     using uvec4 = vec<unsigned int, 4u>;
