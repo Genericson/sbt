@@ -1,3 +1,4 @@
+//vec.hpp
 //====================LICENSE====================//
 // Copyright (c) 2013, Harrison Leadlay
 // All rights reserved.
@@ -54,18 +55,21 @@ public:
     vec (const vec<T, L>& v);
 
     vec (const T v[L]);
+
     /** Access component directly (via reference).
     *   \param [in] index index of component (starting from 0)
     *   \return Reference to component at index
     *   \warning This method does not check the index to be in bounds
     */
     T& operator[] (const unsigned int index);
+
     /** Access component directly (via reference) read-only.
     *   \param [in] index index of component (starting from 0)
     *   \return Reference to component at index
     *   \warning This method does not check the index to be in bounds
     */
     const T& operator[] (const unsigned int index) const;
+
     /** Returns a copy of component at index. Checks that index is within the
     *   vector
     *   \param [in] index index of component (starting from 0)
@@ -73,26 +77,32 @@ public:
     *   \exception out_of_bounds if index is too large
     */
     T get (const unsigned int index) const;
+
     /** Returns the number of components/dimensions of the vector
     *   \return length
     */
     const unsigned int length () const;
+
     //-----------OPERATORS------------//
+
     /** Copy vector by component
     *
     */
     const vec& operator= (const vec& v);
+
     /** Copy array by component
     *
     */
     const vec& operator= (const T v[L]);
+
     /** Multiply vectors component-component
     *
     */
-
     const vec operator* (const vec<T, L>& v) const;
+
     /** Multiple vector by scalar */
     const vec operator* (const T& s) const;
+
     /** Equals comparison
     *   \return returns `true` if vectors are equal component-wise
     *       `false` if any one set of components are not equal
@@ -103,14 +113,17 @@ public:
     *   \warning Consider floating-point error when using such types of vectors
     */
     bool operator== (const vec<T, L>& v) const;
+
     /** Calculates the norm/magnitude of the vector
     *   \return norm of vector
     */
     T norm() const;
+
     /** Calculates a unit vector in the direction of v
     *   \return unit normal vector
     */
     vec<T, L> normalize() const;
+
     /** Destructor */
     ~vec();
 
