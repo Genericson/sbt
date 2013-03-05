@@ -1,4 +1,5 @@
 //vec.inl
+// Note: do not include this file directly, include vec.hpp
 //====================LICENSE====================//
 // Copyright (c) 2013, Harrison Leadlay
 // All rights reserved.
@@ -27,7 +28,7 @@
 //===============================================//
 
 #include <iostream>
-#include <string>
+//#include <string>
 #include <cmath>
 #include <stdexcept>
 

@@ -86,12 +86,14 @@ public:
     //-----------OPERATORS------------//
 
     /** Copy vector by component
-    *
+    *   \param v vector to copy
+    *   \return vector with value of v
     */
     const vec& operator= (const vec& v);
 
-    /** Copy array by component
-    *
+    /** Copy array to vector by component
+    *   \param v array to copy
+    *   \return vector with value of
     */
     const vec& operator= (const T v[L]);
 
@@ -184,7 +186,7 @@ public:
 } //namespace sbt
 
 //=============INCLUDE IMPLEMENTATION==============//
-
+// Template implementation inserted directly into header
 #include "vec.inl"
 
 #endif vec_HPP_
