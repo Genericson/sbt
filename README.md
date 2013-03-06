@@ -20,7 +20,8 @@ The specific class template aliases for basic primitives in the namespaces:
 Headers
 --------
 ### vec.hpp, vec.inl
-  - vec.hpp includes the 'vec' class template prototype and 
+  - vec.hpp includes the 'vec' class template prototype, aliases, and
+    specializaions
   - vec.inl is the implementation of the 'vec' class template. The template is 
     over two files only for readabilty. Do not build or link the *.inl
 
