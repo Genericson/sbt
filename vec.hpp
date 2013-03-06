@@ -135,7 +135,7 @@ public:
     /// \return vector product
     ///
     /////////////////////////////////////////////////
-    const vec operator* (const vec<T, L>& v) const;
+    vec operator* (const vec<T, L>& v) const;
 
     /////////////////////////////////////////////////
     /// \brief Multiple vector by scalar
@@ -144,7 +144,7 @@ public:
     /// \return vector product
     ///
     /////////////////////////////////////////////////
-    const vec operator* (const T& s) const;
+    vec operator* (const T& s) const;
 
     /////////////////////////////////////////////////
     /// \brief Equals comparison

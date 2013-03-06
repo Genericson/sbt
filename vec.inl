@@ -108,7 +108,7 @@ const vec<T, L>& vec<T, L>::operator= (const T v[L])
 } //operator=(T[L])
 
 template <typename T, unsigned int L>
-const vec<T, L> vec<T, L>::operator* (const vec<T, L>& v) const
+vec<T, L> vec<T, L>::operator* (const vec<T, L>& v) const
 {
     vec<T, L> temp;
     for(unsigned int i = 0; i < length(); i++)
@@ -117,7 +117,7 @@ const vec<T, L> vec<T, L>::operator* (const vec<T, L>& v) const
 } //operator*(vec)
 
 template <typename T, unsigned int L>
-const vec<T, L> vec<T, L>::operator* (const T& s) const
+vec<T, L> vec<T, L>::operator* (const T& s) const
 {
     vec<T, L> temp;
     for(unsigned int i = 0; i < length(); i++)
