@@ -126,6 +126,15 @@ const vec<T, L> vec<T, L>::operator* (const T& s) const
 } //operator*(T)
 
 template <typename T, unsigned int L>
+vec<T, L> vec<T, L>::operator+ (const vec<T, L>& v) const
+{
+    vec<T, L> temp;
+    for(int i = 0; i < length(); i++)
+        temp[i] = d[i] * v;
+    return temp;
+} //operator+(vec)
+
+template <typename T, unsigned int L>
 bool vec<T, L>::operator== (const vec<T, L>& v) const
 {
     unsigned int i = 0;

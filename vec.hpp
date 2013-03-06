@@ -103,15 +103,16 @@ public:
     //=============================================//
 
     /////////////////////////////////////////////////
-    /// Copy vector by component
-    ///  \param v vector to copy
-    ///  \return vector with value of v
+    /// \brief Copy vector by component
+    /// \param v vector to copy
+    /// \return vector with value of v
     ///
     /////////////////////////////////////////////////
     const vec& operator= (const vec& v);
 
     /////////////////////////////////////////////////
-    /// Copy array to vector by component
+    /// \brief Copy array to vector by component
+    ///
     /// \param v array to copy
     /// \return vector with value of
     ///
@@ -119,22 +120,35 @@ public:
     const vec& operator= (const T v[L]);
 
     /////////////////////////////////////////////////
+    /// \brief Add vector
+    ///
+    /// \param
+    /// \return sum vector
+    ///
+    /////////////////////////////////////////////////
+     vec operator+ (const vec<T, L>& v) const;
+
+    /////////////////////////////////////////////////
     /// \brief Multiply vectors component-component
-    /// \param v vec to multiply
-    /// \return
+    ///
+    /// \param v vec to add
+    /// \return vector product
     ///
     /////////////////////////////////////////////////
     const vec operator* (const vec<T, L>& v) const;
 
     /////////////////////////////////////////////////
     /// \brief Multiple vector by scalar
+    ///
     /// \param scalar
-    /// \return
+    /// \return vector product
     ///
     /////////////////////////////////////////////////
     const vec operator* (const T& s) const;
+
     /////////////////////////////////////////////////
     /// \brief Equals comparison
+    ///
     /// \return returns `true` if vectors are equal component-wise
     ///     `false` if any one set of components are not equal
     ///   *   <1, 2, 3> == <1, 2, 3> == true
@@ -147,6 +161,7 @@ public:
 
     /////////////////////////////////////////////////
     /// \brief Calculates the norm/magnitude of the vector
+    ///
     /// \return norm of vector
     ///
     /////////////////////////////////////////////////
@@ -154,6 +169,7 @@ public:
 
     /////////////////////////////////////////////////
     /// \brief Calculates a unit vector in the direction of v
+    ///
     /// \return unit normal vector
     ///
     /////////////////////////////////////////////////
@@ -164,6 +180,7 @@ public:
     ///
     /////////////////////////////////////////////////
     ~vec();
+
     //=============================================//
     // STATIC FUNCTIONS
     //=============================================//
