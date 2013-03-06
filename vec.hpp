@@ -128,11 +128,20 @@ public:
     /////////////////////////////////////////////////
      vec operator+ (const vec<T, L>& v) const;
 
+     /////////////////////////////////////////////////
+    /// \brief Vector substraction
+    ///
+    /// \param vec to subtract
+    /// \return difference vector
+    ///
+    /////////////////////////////////////////////////
+    vec operator- (const vec<T, L>& v) const;
+
     /////////////////////////////////////////////////
     /// \brief vector multiplication
     ///
     /// \param v vec to multiply
-    /// \return vector product
+    /// \return product vector
     ///
     /////////////////////////////////////////////////
     vec operator* (const vec<T, L>& v) const;
@@ -141,7 +150,7 @@ public:
     /// \brief Multiply vector by scalar
     ///
     /// \param scalar
-    /// \return vector product
+    /// \return product vector
     ///
     /////////////////////////////////////////////////
     vec operator* (const T& s) const;
