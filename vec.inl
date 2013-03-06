@@ -108,6 +108,24 @@ const vec<T, L>& vec<T, L>::operator= (const T v[L])
 } //operator=(T[L])
 
 template <typename T, unsigned int L>
+vec<T, L> vec<T, L>::operator+ (const vec<T, L>& v) const
+{
+    vec<T, L> temp;
+    for(int i = 0; i < length(); i++)
+        temp[i] = d[i] + v;
+    return temp;
+} //operator+(vec)
+
+template <typename T, unsigned int L>
+vec<T, L> vec<T, L>::operator- (const vec<T, L>& v) const
+{
+    vec<T, L> temp;
+    for(int i = 0; i < length(); i++)
+        temp[i] = d[i] - v;
+    return temp;
+} //operator-(vec)
+
+template <typename T, unsigned int L>
 vec<T, L> vec<T, L>::operator* (const vec<T, L>& v) const
 {
     vec<T, L> temp;
@@ -126,22 +144,15 @@ vec<T, L> vec<T, L>::operator* (const T& s) const
 } //operator*(T)
 
 template <typename T, unsigned int L>
-vec<T, L> vec<T, L>::operator+ (const vec<T, L>& v) const
+vec<T, L> vec<T, L>:: operator- () const
 {
     vec<T, L> temp;
-    for(int i = 0; i < length(); i++)
-        temp[i] = d[i] + v;
+    for(unsigned int i = 0; i < length(); i++)
+    {
+        temp[i] = -(d[i]); // works if negation is implemented for T
+    }
     return temp;
-} //operator+(vec)
-
-template <typename T, unsigned int L>
-vec<T, L> vec<T, L>::operator- (const vec<T, L>& v) const
-{
-    vec<T, L> temp;
-    for(int i = 0; i < length(); i++)
-        temp[i] = d[i] - v;
-    return temp;
-} //operator-(vec)
+} //operator-()
 
 template <typename T, unsigned int L>
 bool vec<T, L>::operator== (const vec<T, L>& v) const

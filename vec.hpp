@@ -156,6 +156,14 @@ public:
     vec operator* (const T& s) const;
 
     /////////////////////////////////////////////////
+    /// \brief Vector negation
+    ///
+    /// \return negated vector
+    ///
+    /////////////////////////////////////////////////
+    vec operator- () const;
+
+    /////////////////////////////////////////////////
     /// \brief Equals comparison
     ///
     /// \return returns `true` if vectors are equal component-wise
