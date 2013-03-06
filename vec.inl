@@ -159,7 +159,8 @@ bool vec<T, L>::operator== (const vec<T, L>& v) const
 {
     unsigned int i = 0;
     // uses loop conditional to check if each set of components are equal
-    for(; i < length() && d[i] == v[i]; i++);
+    for(; i < length() && d[i] == v[i]; i++)
+        ;
     // returns true if loop completed (i < length() terminated loop,
     //     all component comparisons equal)
     // returns false if loop terminated (d[i] == v[i] terminated the loop,
