@@ -120,25 +120,25 @@ public:
     const vec& operator= (const T v[L]);
 
     /////////////////////////////////////////////////
-    /// \brief Add vector
+    /// \brief Vector addition
     ///
-    /// \param
+    /// \param vec to add
     /// \return sum vector
     ///
     /////////////////////////////////////////////////
      vec operator+ (const vec<T, L>& v) const;
 
     /////////////////////////////////////////////////
-    /// \brief Multiply vectors component-component
+    /// \brief vector multiplication
     ///
-    /// \param v vec to add
+    /// \param v vec to multiply
     /// \return vector product
     ///
     /////////////////////////////////////////////////
     vec operator* (const vec<T, L>& v) const;
 
     /////////////////////////////////////////////////
-    /// \brief Multiple vector by scalar
+    /// \brief Multiply vector by scalar
     ///
     /// \param scalar
     /// \return vector product
