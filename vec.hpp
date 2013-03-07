@@ -139,7 +139,8 @@ class vec : public vec_base<T, L>
 public:
     // Inherited constructors (could use this in c++11 to inherit constructors:
     //      using vec_base<T, L>::vec_base;
-    // otherwise:
+    // (or something similar) should work
+    // otherwise(!c++11):
     vec() : vec_base<T, L> () {}
     vec(const T value) : vec_base<T, L> (value) {}
     vec(const vec_base<T, L>& v) : vec_base<T, L>(v) {}
