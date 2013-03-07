@@ -284,8 +284,8 @@ class vec<bool, L> :  public vec_base<bool, L>
 {
     // Inherited constructors (could use this in c++11 to inherit constructors):
     //      using vec_base<bool, L>::vec_base;
-    // (or something similar) would work
-    // otherwise( ! c++11):
+    // (or something similar) would work.
+    // Otherwise:
     vec() : vec_base<bool, L> () {}
     vec(const bool value) : vec_base<bool, L> (value) {}
     vec(const vec_base<bool, L>& v) : vec_base<bool, L>(v) {}
@@ -301,15 +301,6 @@ class vec<bool, L> :  public vec_base<bool, L>
     ///
     /////////////////////////////////////////////////
     vec<bool, L> operator! () const;
-
-    /////////////////////////////////////////////////
-    /// \brief logical negation assignment
-    ///
-    /// \param boolean vector to negate and assign
-    /// \return `this`
-    ///
-    /////////////////////////////////////////////////
-    const vec<bool,L>  operator!= (const vec<bool, L>& v);
 };
 
 
