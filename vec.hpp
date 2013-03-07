@@ -383,4 +383,4 @@ using uvec4 = vec<unsigned int, 4u>;
 //=============================================//
 #include "vec.inl"
 
-#endif vec_HPP_
+#endif //vec_HPP_
