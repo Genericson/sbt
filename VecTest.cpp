@@ -91,6 +91,12 @@ int main()
     using namespace sbt::bvec; //     '      boolean-type  '        '
     using namespace sbt::ivec; //     '   (unsigned) integer-type ' '
 
+    vec2 v2f(1.f, 2.f);
+    dvec3 v3d(1.d, 2.d, 3.d);
+    ivec4 v4i(1, 2, 3, 4);
+    vec<unsigned, 4> v2u(1u, 2u, 3u, 4u);
+    vec<unsigned, 2> v(1u, 2u);
+
     for(int opt = -1; opt != 0; )
     {
         cout<<" 1: +     2: -     3: *\n"

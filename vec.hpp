@@ -57,11 +57,34 @@ private:
     const static unsigned int len = L;
     T d[L];
 public:
-    vec();
+    vec ();
     vec (const T value);
     vec (const vec<T, L>& v);
-
     vec (const T v[L]);
+
+    /////////////////////////////////////////////////
+    /// \brief Constructor specific to 2-d vectors
+    ///
+    /// \param component values
+    ///
+    /////////////////////////////////////////////////
+    vec (T c0, T c1);
+
+    /////////////////////////////////////////////////
+    /// \brief Constructor specific to 3-d vectors
+    ///
+    /// \param component values
+    ///
+    /////////////////////////////////////////////////
+    vec (T c0, T c1, T c2);
+
+    /////////////////////////////////////////////////
+    /// \brief Constructor specific to 4-d vectors
+    ///
+    /// \param component values
+    ///
+    /////////////////////////////////////////////////
+    vec (T c0, T c1, T c2, T c3);
 
     /////////////////////////////////////////////////
     /// \brief Access component directly (via reference).
@@ -225,17 +248,21 @@ public:
 }; //class vec
 
 //=============================================//
-// Specialized methods
+// Class Specializations
 //=============================================//
 
-///////////////////////////////////////////////////
-///// \brief Logical negation
-/////
-///// \return boolean vector of negation
-/////
-///////////////////////////////////////////////////
-//template <>
-//vec<bool, L> vec<bool, L>::operator! () const;
+template <unsigned int L>
+class vec<bool, L>
+{
+    vec();
+    vec (const bool value);
+    vec (const vec<bool, L>& v);
+    vec (const bool v[L]);
+
+    vec<bool, L> operator! () const;
+    bool operator== (const vec<bool, L>& v) const;
+};
+
 
 //=============================================//
 // Template Aliases

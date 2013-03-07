@@ -63,6 +63,48 @@ vec<T, L>::vec (const T v[L])
         d[i] = v[i];
 } //vec(T[L])
 
+/////////////////////////////////////////////////
+template <typename T, unsigned int L>
+vec<T, L>::vec (T c0, T c1)
+{
+    //if this constructor is specific for non-2D vector,
+    //then compilation is aborted
+    static_assert( L == 2, "Template class must be Vec<T, 2u> to use vec(a, b)");
+
+    //else, assignment
+    d[0] = c0;
+    d[1] = c1;
+}
+
+/////////////////////////////////////////////////
+template <typename T, unsigned int L>
+vec<T, L>::vec (T c0, T c1, T c2)
+{
+    //if this constructor is specific for non-3D vector,
+    //then compilation is aborted
+    static_assert( L == 3, "Template class must be Vec<T, 3u> to use vec(a, b)");
+
+    //else, assignment
+    d[0] = c0;
+    d[1] = c1;
+    d[2] = c2;
+}
+
+/////////////////////////////////////////////////
+template <typename T, unsigned int L>
+vec<T, L>::vec (T c0, T c1, T c2, T c3)
+{
+    //if this constructor is specific for non-4D vector,
+    //then compilation is aborted
+    static_assert( L == 4, "Template class must be Vec<T, 4u> to use vec(a, b)");
+
+    //else, assignment
+    d[0] = c0;
+    d[1] = c1;
+    d[2] = c2;
+    d[3] = c3;
+}
+
 template <typename T, unsigned int L>
 T& vec<T, L>::operator[] (const unsigned int index)
 {
@@ -222,5 +264,9 @@ vec<T, 3u> cross(const vec<T, 3u>& a, const vec<T, 3u>& b)
     r[2] = a[0]*b[1] - a[1]*b[0];
     return r;
 } //cross(vec3, vec3)
+
+//=============================================//
+// Bool Specialization
+//=============================================//
 
 } //namespace sbt
