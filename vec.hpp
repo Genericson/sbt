@@ -45,22 +45,28 @@
 namespace sbt
 {
 
-template <typename T, unsigned int L>
+//=============================================//
+// Classes
+//=============================================//
 
 /////////////////////////////////////////////////
-/// \brief A vector (as in mathematics and physics) template class
-///
+// Virtual base class for vec<T, L> that includes all methods common to all vec
+// classes (e.g., vec<bool, L>, vec<T, L> have the same constructors, so those
+// are inherited from vec_base
 /////////////////////////////////////////////////
-class vec
+template <typename T, unsigned int L>
+class vec_base
 {
 private:
+    // all vec classes have len = length/dimensions/#-components
+    //                      d[] = array of data (components)
     const static unsigned int len = L;
     T d[L];
 public:
-    vec ();
-    vec (const T value);
-    vec (const vec<T, L>& v);
-    vec (const T v[L]);
+    vec_base ();
+    vec_base (const T value);
+    vec_base (const vec_base<T, L>& v);
+    vec_base (const T v[L]);
 
     /////////////////////////////////////////////////
     /// \brief Constructor specific to 2-d vectors
@@ -68,7 +74,7 @@ public:
     /// \param component values
     ///
     /////////////////////////////////////////////////
-    vec (T c0, T c1);
+    vec_base (T c0, T c1);
 
     /////////////////////////////////////////////////
     /// \brief Constructor specific to 3-d vectors
@@ -76,7 +82,7 @@ public:
     /// \param component values
     ///
     /////////////////////////////////////////////////
-    vec (T c0, T c1, T c2);
+    vec_base (T c0, T c1, T c2);
 
     /////////////////////////////////////////////////
     /// \brief Constructor specific to 4-d vectors
@@ -84,7 +90,7 @@ public:
     /// \param component values
     ///
     /////////////////////////////////////////////////
-    vec (T c0, T c1, T c2, T c3);
+    vec_base (T c0, T c1, T c2, T c3);
 
     /////////////////////////////////////////////////
     /// \brief Access component directly (via reference).
@@ -120,9 +126,21 @@ public:
     ///
     /////////////////////////////////////////////////
     const unsigned int length () const;
+}; // class vec_base
+
+
+/////////////////////////////////////////////////
+/// \brief A vector (as in mathematics and physics) template class
+///
+/////////////////////////////////////////////////
+template <typename T, unsigned int L>
+class vec : public vec_base<T, L>
+{
+public:
+
 
     //=============================================//
-    // OPERATORS
+    // Arithmetic Methods
     //=============================================//
 
     /////////////////////////////////////////////////

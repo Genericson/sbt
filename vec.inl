@@ -35,54 +35,57 @@
 namespace sbt
 {
 
+//=============================================//
+// Class vec_base
+//=============================================//
 template <typename T, unsigned int L>
-vec<T, L>::vec ()
+vec_base<T, L>::vec_base ()
 {
     for(unsigned int i; i < length(); i++)
         d[i] = 0;
 } //vec()
 
 template <typename T, unsigned int L>
-vec<T, L>::vec (const T value)
+vec_base<T, L>::vec_base (const T value)
 {
     for(unsigned int i = 0u; i < length(); i++)
         d[i] =  value;
 } //vec(T)
 
 template <typename T, unsigned int L>
-vec<T, L>::vec (const vec<T, L>& v)
+vec_base<T, L>::vec_base (const vec_base<T, L>& v)
 {
     for(unsigned int i = 0u; i < length(); i++)
         d[i] = v[i];
 } //vec(vec)
 
 template <typename T, unsigned int L>
-vec<T, L>::vec (const T v[L])
+vec_base<T, L>::vec_base (const T v[L])
 {
     for(unsigned int i = 0; i < length(); i++)
         d[i] = v[i];
 } //vec(T[L])
 
-/////////////////////////////////////////////////
 template <typename T, unsigned int L>
-vec<T, L>::vec (T c0, T c1)
+vec_base<T, L>::vec_base (T c0, T c1)
 {
     //if this constructor is specific for non-2D vector,
     //then compilation is aborted
-    static_assert( L == 2, "Template class must be Vec<T, 2u> to use vec(a, b)");
+    static_assert( L == 2,
+                  "Template class must be Vec<T, 2u> to use vec(a, b)");
 
     //else, assignment
     d[0] = c0;
     d[1] = c1;
 }
 
-/////////////////////////////////////////////////
 template <typename T, unsigned int L>
-vec<T, L>::vec (T c0, T c1, T c2)
+vec_base<T, L>::vec_base (T c0, T c1, T c2)
 {
     //if this constructor is specific for non-3D vector,
     //then compilation is aborted
-    static_assert( L == 3, "Template class must be Vec<T, 3u> to use vec(a, b)");
+    static_assert( L == 3,
+                   "Template class must be Vec<T, 3u> to use vec(a, b, c)");
 
     //else, assignment
     d[0] = c0;
@@ -90,13 +93,13 @@ vec<T, L>::vec (T c0, T c1, T c2)
     d[2] = c2;
 }
 
-/////////////////////////////////////////////////
 template <typename T, unsigned int L>
-vec<T, L>::vec (T c0, T c1, T c2, T c3)
+vec_base<T, L>::vec_base (T c0, T c1, T c2, T c3)
 {
     //if this constructor is specific for non-4D vector,
     //then compilation is aborted
-    static_assert( L == 4, "Template class must be Vec<T, 4u> to use vec(a, b)");
+    static_assert( L == 4,
+                  "Template class must be Vec<T, 4u> to use vec(a, b, c, d)");
 
     //else, assignment
     d[0] = c0;
@@ -106,19 +109,19 @@ vec<T, L>::vec (T c0, T c1, T c2, T c3)
 }
 
 template <typename T, unsigned int L>
-T& vec<T, L>::operator[] (const unsigned int index)
+T& vec_base<T, L>::operator[] (const unsigned int index)
 {
     return d[index];
 } //operator[](uint)
 
 template <typename T, unsigned int L>
-const T& vec<T, L>::operator[] (const unsigned int index) const
+const T& vec_base<T, L>::operator[] (const unsigned int index) const
 {
     return d[index];
 } //operator[](uint)
 
 template <typename T, unsigned int L>
-T vec<T, L>::get (const unsigned int index) const
+T vec_base<T, L>::get (const unsigned int index) const
 {
     if( index < this->length())
         return d[index];
@@ -128,11 +131,15 @@ T vec<T, L>::get (const unsigned int index) const
 } //get(uint)
 
 template <typename T, unsigned int L>
-const unsigned int vec<T, L>::length() const
+const unsigned int vec_base<T, L>::length() const
 {
     return this->len;
 } //length()
 
+
+//=============================================//
+// Class vec
+//=============================================//
 template <typename T, unsigned int L>
 const vec<T, L>& vec<T, L>::operator= (const vec& v)
 {
