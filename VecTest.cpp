@@ -95,10 +95,11 @@ int main()
     using namespace sbt::ivec; //     '   (unsigned) integer-type ' '
 
     vec2 v2f(1.f, 2.f);
-    dvec3 v3d(1.d, 2.d, 3.d);
+    dvec3 v3d(1., 2., 3.);
     ivec4 v4i(1, 2, 3, 4);
-    vec<unsigned, 4> v2u(1u, 2u, 3u, 4u);
-    vec<unsigned, 2> v(1u, 2u);
+    vec<unsigned int, 4> v4ua(1u, 2u, 3u, 4u);
+    vec<unsigned int, 4> v4ub(1u, 2u, 3u, 4u);
+    cout<< (v4ua == v4ub) << endl;
 
     for(int opt = -1; opt != 0; )
     {
