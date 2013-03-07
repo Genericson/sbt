@@ -39,8 +39,11 @@ bool inputValid() {
         std::cout<<"Try again:"<<std::endl;
         return false;
     }
-    if ( std::cin.eof() )
+    else if ( std::cin.eof() )
+    {
         std::cerr<<"EOF ERROR, BAD MONKEY!!!\n";
+        return false;
+    }
     else
         return true;
 }
