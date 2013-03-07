@@ -27,6 +27,16 @@
 // OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN IF
 // ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 /////////////////////////////////////////////////
+// General implementation comments
+//=============================================//
+// Loops were used to generalize various methods (and that with minimal
+// effort on my part).
+//
+// I did it this way(as opposed to hard-coding it in for each element for the
+// common 2-4D vectors) because I didn't think it would make a difference
+// with most compilers which will likely unroll those loops anyway.
+//
+/////////////////////////////////////////////////
 
 #include <iostream>
 #include <cmath>
