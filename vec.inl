@@ -147,6 +147,20 @@ const vec_base<T, L>& vec_base<T, L>::operator= (const T v[L])
 } //operator=(T[L])
 
 template <typename T, unsigned int L>
+bool vec_base<T, L>::operator== (const vec_base<T, L>& v) const
+{
+    unsigned int i = 0;
+    // uses loop conditional to check if each set of components are equal
+    for(; i < L && (*this)[i] == v[i]; i++)
+        ;
+    // returns true if loop completed (i < length() terminated loop,
+    //     all component comparisons equal)
+    // returns false if loop terminated (d[i] == v[i] terminated the loop,
+    //     at least one set of components not equal)
+    return i == L;
+} //operator==(vec)
+
+template <typename T, unsigned int L>
 const unsigned int vec_base<T, L>::length() const
 {
     return this->len;
@@ -203,20 +217,6 @@ vec<T, L> vec<T, L>:: operator- () const
     }
     return temp;
 } //operator-()
-
-template <typename T, unsigned int L>
-bool vec<T, L>::operator== (const vec<T, L>& v) const
-{
-    unsigned int i = 0;
-    // uses loop conditional to check if each set of components are equal
-    for(; i < L && (*this)[i] == v[i]; i++)
-        ;
-    // returns true if loop completed (i < length() terminated loop,
-    //     all component comparisons equal)
-    // returns false if loop terminated (d[i] == v[i] terminated the loop,
-    //     at least one set of components not equal)
-    return i == L;
-} //operator==(vec)
 
 template <typename T, unsigned int L>
 T vec<T, L>::norm() const

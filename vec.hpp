@@ -138,6 +138,19 @@ public:
     const vec_base& operator= (const T v[L]);
 
     /////////////////////////////////////////////////
+    /// \brief Equals comparison
+    ///
+    /// \return returns `true` if vectors are equal component-wise
+    ///     `false` if any one set of components are not equal
+    ///   *   <1, 2, 3> == <1, 2, 3> == true
+    /// <2, 1, 3> == <1, 2, 3> == false
+    ///
+    /// \warning Consider floating-point error when using such types of vectors
+    ///
+    /////////////////////////////////////////////////
+    bool operator== (const vec_base<T, L>& v) const;
+
+    /////////////////////////////////////////////////
     /// Returns the number of components/dimensions of the vector
     /// \return length
     ///
@@ -213,19 +226,6 @@ public:
     ///
     /////////////////////////////////////////////////
     vec operator- () const;
-
-    /////////////////////////////////////////////////
-    /// \brief Equals comparison
-    ///
-    /// \return returns `true` if vectors are equal component-wise
-    ///     `false` if any one set of components are not equal
-    ///   *   <1, 2, 3> == <1, 2, 3> == true
-    /// <2, 1, 3> == <1, 2, 3> == false
-    ///
-    /// \warning Consider floating-point error when using such types of vectors
-    ///
-    /////////////////////////////////////////////////
-    bool operator== (const vec<T, L>& v) const;
 
     /////////////////////////////////////////////////
     /// \brief Calculates the norm/magnitude of the vector
