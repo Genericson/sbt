@@ -161,7 +161,7 @@ bool vec_base<T, L>::operator== (const vec_base<T, L>& v) const
 {
     unsigned int i = 0;
     // uses loop conditional to check if each set of components are equal
-    for(; i < L && (*this)[i] == v[i]; i++)
+    for(; i < L && ( (*this)[i] == v[i] ); i++)
         ;
     // returns true if loop completed (i < length() terminated loop,
     //     all component comparisons equal)
