@@ -287,7 +287,18 @@ vec<T, 3u> cross(const vec<T, 3u>& a, const vec<T, 3u>& b)
 // Bool Specialization
 //=============================================//
 
+template <unsigned int L>
+vec<bool, L> vec<bool, L>::operator! () const
+{
+    vec<bool, L> temp;
 
+    for( unsigned int i = 0; i < L; i++ )
+    {
+        temp[i] = !( (*this)[i] );
+    }
+
+    return temp;
+}
 
 
 } //namespace sbt
