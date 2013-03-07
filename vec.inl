@@ -143,8 +143,8 @@ const unsigned int vec_base<T, L>::length() const
 template <typename T, unsigned int L>
 const vec<T, L>& vec<T, L>::operator= (const vec& v)
 {
-    for(unsigned int i = 0; i < length(); i++)
-        d[i] = v[i];
+    for(unsigned int i = 0; i < this->length(); i++)
+        (*this)[i] = v[i];
     return *this;
 } //operator=(vec)
 
