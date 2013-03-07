@@ -137,7 +137,16 @@ template <typename T, unsigned int L>
 class vec : public vec_base<T, L>
 {
 public:
-
+    // Inherited constructors (could use this in c++11 to inherit constructors:
+    //      using vec_base<T, L>::vec_base;
+    // otherwise:
+    vec() : vec_base<T, L> () {}
+    vec(const T value) : vec_base<T, L> (value) {}
+    vec(const vec_base<T, L>& v) : vec_base<T, L>(v) {}
+    vec(const T v[L]): vec_base<T, L> (v) {}
+    vec(T c0, T c1) : vec_base<T, L> (c0, c1) {}
+    vec(T c0, T c1, T c2) : vec_base<T, L> (c0, c1, c2) {}
+    vec(T c0, T c1, T c2, T c3) : vec_base<T, L> (c0, c1, c2, c3) {}
 
     //=============================================//
     // Arithmetic Methods

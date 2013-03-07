@@ -143,7 +143,7 @@ const unsigned int vec_base<T, L>::length() const
 template <typename T, unsigned int L>
 const vec<T, L>& vec<T, L>::operator= (const vec& v)
 {
-    for(unsigned int i = 0; i < this->length(); i++)
+    for(unsigned int i = 0; i < L; i++)
         (*this)[i] = v[i];
     return *this;
 } //operator=(vec)
@@ -151,8 +151,8 @@ const vec<T, L>& vec<T, L>::operator= (const vec& v)
 template <typename T, unsigned int L>
 const vec<T, L>& vec<T, L>::operator= (const T v[L])
 {
-    for(unsigned int i = 0; i < length(); i++)
-        d[i] = v[i];
+    for(unsigned int i = 0; i < L; i++)
+        (*this)[i] = v[i];
     return *this;
 } //operator=(T[L])
 
@@ -160,8 +160,8 @@ template <typename T, unsigned int L>
 vec<T, L> vec<T, L>::operator+ (const vec<T, L>& v) const
 {
     vec<T, L> temp;
-    for(int i = 0; i < length(); i++)
-        temp[i] = d[i] + v;
+    for(int i = 0; i < L; i++)
+        temp[i] = (*this)[i] + v;
     return temp;
 } //operator+(vec)
 
@@ -169,8 +169,8 @@ template <typename T, unsigned int L>
 vec<T, L> vec<T, L>::operator- (const vec<T, L>& v) const
 {
     vec<T, L> temp;
-    for(int i = 0; i < length(); i++)
-        temp[i] = d[i] - v;
+    for(int i = 0; i < L; i++)
+        temp[i] = (*this)[i] - v;
     return temp;
 } //operator-(vec)
 
@@ -178,8 +178,8 @@ template <typename T, unsigned int L>
 vec<T, L> vec<T, L>::operator* (const vec<T, L>& v) const
 {
     vec<T, L> temp;
-    for(unsigned int i = 0; i < length(); i++)
-        temp[i] = v[i] * d[i];
+    for(unsigned int i = 0; i < L; i++)
+        temp[i] = v[i] * (*this)[i];
     return temp;
 } //operator*(vec)
 
@@ -187,8 +187,8 @@ template <typename T, unsigned int L>
 vec<T, L> vec<T, L>::operator* (const T& s) const
 {
     vec<T, L> temp;
-    for(unsigned int i = 0; i < length(); i++)
-        temp[i] = d[i] * s;
+    for(unsigned int i = 0; i < L; i++)
+        temp[i] = (*this)[i] * s;
     return temp;
 } //operator*(T)
 
@@ -196,9 +196,9 @@ template <typename T, unsigned int L>
 vec<T, L> vec<T, L>:: operator- () const
 {
     vec<T, L> temp;
-    for(unsigned int i = 0; i < length(); i++)
+    for(unsigned int i = 0; i < L; i++)
     {
-        temp[i] = -(d[i]); // works if negation is implemented for T
+        temp[i] = -((*this)[i]); // works if negation is implemented for T
     }
     return temp;
 } //operator-()
@@ -208,22 +208,22 @@ bool vec<T, L>::operator== (const vec<T, L>& v) const
 {
     unsigned int i = 0;
     // uses loop conditional to check if each set of components are equal
-    for(; i < length() && d[i] == v[i]; i++)
+    for(; i < L && (*this)[i] == v[i]; i++)
         ;
     // returns true if loop completed (i < length() terminated loop,
     //     all component comparisons equal)
     // returns false if loop terminated (d[i] == v[i] terminated the loop,
     //     at least one set of components not equal)
-    return i == length();
+    return i == L;
 } //operator==(vec)
 
 template <typename T, unsigned int L>
 T vec<T, L>::norm() const
 {
     T result = 0;
-    for(unsigned int i = 0; i < length(); i++)
+    for(unsigned int i = 0; i < L; i++)
     {
-        result = (d[i])*(d[i]) + result;
+        result = ((*this)[i])*((*this)[i]) + result;
         std::cerr<<"result: "<<result<<std::endl;
     }
     return std::sqrt(result);
@@ -234,7 +234,7 @@ vec<T, L>  vec<T, L>::normalize() const
 {
     T n = this->norm();
     vec<T, L> result = *this;
-    for(unsigned int i = 0; i < this->length(); i++)
+    for(unsigned int i = 0; i < L; i++)
     {
         result[i] = result[i] / n;
     }
