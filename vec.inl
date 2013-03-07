@@ -131,6 +131,22 @@ T vec_base<T, L>::get (const unsigned int index) const
 } //get(uint)
 
 template <typename T, unsigned int L>
+const vec_base<T, L>& vec_base<T, L>::operator= (const vec_base<T, L>& v)
+{
+    for(unsigned int i = 0; i < L; i++)
+        (*this)[i] = v[i];
+    return *this;
+} //operator=(vec)
+
+template <typename T, unsigned int L>
+const vec_base<T, L>& vec_base<T, L>::operator= (const T v[L])
+{
+    for(unsigned int i = 0; i < L; i++)
+        (*this)[i] = v[i];
+    return *this;
+} //operator=(T[L])
+
+template <typename T, unsigned int L>
 const unsigned int vec_base<T, L>::length() const
 {
     return this->len;
@@ -140,21 +156,6 @@ const unsigned int vec_base<T, L>::length() const
 //=============================================//
 // Class vec
 //=============================================//
-template <typename T, unsigned int L>
-const vec<T, L>& vec<T, L>::operator= (const vec& v)
-{
-    for(unsigned int i = 0; i < L; i++)
-        (*this)[i] = v[i];
-    return *this;
-} //operator=(vec)
-
-template <typename T, unsigned int L>
-const vec<T, L>& vec<T, L>::operator= (const T v[L])
-{
-    for(unsigned int i = 0; i < L; i++)
-        (*this)[i] = v[i];
-    return *this;
-} //operator=(T[L])
 
 template <typename T, unsigned int L>
 vec<T, L> vec<T, L>::operator+ (const vec<T, L>& v) const
@@ -275,5 +276,8 @@ vec<T, 3u> cross(const vec<T, 3u>& a, const vec<T, 3u>& b)
 //=============================================//
 // Bool Specialization
 //=============================================//
+
+
+
 
 } //namespace sbt

@@ -121,6 +121,23 @@ public:
     T get (const unsigned int index) const;
 
     /////////////////////////////////////////////////
+    /// \brief Copy vector by component
+    /// \param v vector to copy
+    /// \return vector with value of v
+    ///
+    /////////////////////////////////////////////////
+    const vec_base& operator= (const vec_base& v);
+
+    /////////////////////////////////////////////////
+    /// \brief Copy array to vector by component
+    ///
+    /// \param v array to copy
+    /// \return vector with value of
+    ///
+    /////////////////////////////////////////////////
+    const vec_base& operator= (const T v[L]);
+
+    /////////////////////////////////////////////////
     /// Returns the number of components/dimensions of the vector
     /// \return length
     ///
@@ -152,23 +169,6 @@ public:
     //=============================================//
     // Arithmetic Methods
     //=============================================//
-
-    /////////////////////////////////////////////////
-    /// \brief Copy vector by component
-    /// \param v vector to copy
-    /// \return vector with value of v
-    ///
-    /////////////////////////////////////////////////
-    const vec& operator= (const vec& v);
-
-    /////////////////////////////////////////////////
-    /// \brief Copy array to vector by component
-    ///
-    /// \param v array to copy
-    /// \return vector with value of
-    ///
-    /////////////////////////////////////////////////
-    const vec& operator= (const T v[L]);
 
     /////////////////////////////////////////////////
     /// \brief Vector addition
@@ -294,9 +294,26 @@ class vec<bool, L> :  public vec_base<bool, L>
     vec(bool c0, bool c1, bool c2) : vec_base<bool, L> (c0, c1, c2) {}
     vec(bool c0, bool c1, bool c2, bool c3) : vec_base<bool, L> (c0, c1, c2, c3) {}
 
+    const vec<bool, L>& operator= (vec<bool, L>& v);
+
+    /////////////////////////////////////////////////
+    /// \brief logical negation
+    ///
+    /// \return component-wise negated boolean vector
+    ///
+    /////////////////////////////////////////////////
     vec<bool, L> operator! () const;
+
     bool operator== (const vec<bool, L>& v) const;
-    bool operator!= (const vec<bool, L>& v) const;
+
+    /////////////////////////////////////////////////
+    /// \brief logical negation assignment
+    ///
+    /// \param boolean vector to negate and assign
+    /// \return `this`
+    ///
+    /////////////////////////////////////////////////
+    const vec<bool,L>  operator!= (const vec<bool, L>& v);
 };
 
 
