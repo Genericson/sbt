@@ -137,10 +137,10 @@ template <typename T, unsigned int L>
 class vec : public vec_base<T, L>
 {
 public:
-    // Inherited constructors (could use this in c++11 to inherit constructors:
+    // Inherited constructors (could use this in c++11 to inherit constructors):
     //      using vec_base<T, L>::vec_base;
-    // (or something similar) should work
-    // otherwise(!c++11):
+    // (or something similar) would work
+    // otherwise( ! c++11):
     vec() : vec_base<T, L> () {}
     vec(const T value) : vec_base<T, L> (value) {}
     vec(const vec_base<T, L>& v) : vec_base<T, L>(v) {}
@@ -177,7 +177,7 @@ public:
     /// \return sum vector
     ///
     /////////////////////////////////////////////////
-     vec operator+ (const vec<T, L>& v) const;
+    vec operator+ (const vec<T, L>& v) const;
 
      /////////////////////////////////////////////////
     /// \brief Vector substraction
@@ -280,15 +280,23 @@ public:
 //=============================================//
 
 template <unsigned int L>
-class vec<bool, L>
+class vec<bool, L> :  public vec_base<bool, L>
 {
-    vec();
-    vec (const bool value);
-    vec (const vec<bool, L>& v);
-    vec (const bool v[L]);
+    // Inherited constructors (could use this in c++11 to inherit constructors):
+    //      using vec_base<bool, L>::vec_base;
+    // (or something similar) would work
+    // otherwise( ! c++11):
+    vec() : vec_base<bool, L> () {}
+    vec(const bool value) : vec_base<bool, L> (value) {}
+    vec(const vec_base<bool, L>& v) : vec_base<bool, L>(v) {}
+    vec(const bool v[L]): vec_base<bool, L> (v) {}
+    vec(bool c0, bool c1) : vec_base<bool, L> (c0, c1) {}
+    vec(bool c0, bool c1, bool c2) : vec_base<bool, L> (c0, c1, c2) {}
+    vec(bool c0, bool c1, bool c2, bool c3) : vec_base<bool, L> (c0, c1, c2, c3) {}
 
     vec<bool, L> operator! () const;
     bool operator== (const vec<bool, L>& v) const;
+    bool operator!= (const vec<bool, L>& v) const;
 };
 
 
