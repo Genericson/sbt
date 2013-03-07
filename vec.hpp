@@ -294,8 +294,6 @@ class vec<bool, L> :  public vec_base<bool, L>
     vec(bool c0, bool c1, bool c2) : vec_base<bool, L> (c0, c1, c2) {}
     vec(bool c0, bool c1, bool c2, bool c3) : vec_base<bool, L> (c0, c1, c2, c3) {}
 
-    const vec<bool, L>& operator= (vec<bool, L>& v);
-
     /////////////////////////////////////////////////
     /// \brief logical negation
     ///
@@ -303,8 +301,6 @@ class vec<bool, L> :  public vec_base<bool, L>
     ///
     /////////////////////////////////////////////////
     vec<bool, L> operator! () const;
-
-    bool operator== (const vec<bool, L>& v) const;
 
     /////////////////////////////////////////////////
     /// \brief logical negation assignment
