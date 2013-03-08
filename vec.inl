@@ -33,8 +33,8 @@
 // effort on my part).
 //
 // I did it this way(as opposed to hard-coding it in for each element for the
-// common 2-4D vectors) because I didn't think it would make a difference
-// with most compilers which will likely unroll those loops anyway.
+// common 2-4D vectors) because I didn't think it would make a difference as far
+// as runtime speed, as those loops will likely be unrolled by the compiler.
 //
 /////////////////////////////////////////////////
 
