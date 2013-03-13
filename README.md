@@ -33,11 +33,14 @@ The specific class template aliases for basic primitives in the namespaces:
   - sbt::ivec - signed and unsigned int types
   - sbt::bvec - bool type
 
-#### unimplemented:
+#### specializations:
   - boolean specialization of vector class
     + constructors
     + equals
     + logical negation
+
+#### unimplemented:
+
   - whatever else I'm not thinking of at the moment
 
 Headers
@@ -46,13 +49,9 @@ Headers
   - vec.hpp includes the 'vec' class template prototype, aliases, and
     specializaions
   - vec.inl is the implementation of the 'vec' class template. The template is 
-    over two files only for readabilty. Do not build or link the *.inl
+    over two files only for readabilty. Do not build or link the *.inl directly
 
 Other Files
 ------------
-### VecTest.cpp
-  - Interactively tests vec methods for basic types (see vec aliases in nested 
-    namespaces in vec.hpp)
-
 ### Doxyfile
   - Configuration for Doxygen
