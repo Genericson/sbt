@@ -41,6 +41,8 @@ The specific class template aliases for basic primitives in the namespaces:
 
 #### unimplemented:
 
+  - midpoint method
+  - distance/difference method
   - whatever else I'm not thinking of at the moment
 
 Headers
