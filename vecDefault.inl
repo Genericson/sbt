@@ -259,6 +259,12 @@ vec<T, L> vec<T, L>::diff(vector<T, L> B)
 }
 
 template <typename T, unsigned int L>
+vec<T, L> vec<T, L>::mid(vector<T, L> B)
+{
+	return 0.5 * (B - *this);
+}
+
+template <typename T, unsigned int L>
 vec<T, L>::~vec()
 {
 
