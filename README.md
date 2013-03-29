@@ -36,7 +36,6 @@ The specific class template aliases for basic primitives in the namespaces:
 #### specializations:
   - boolean specialization of vector class
     + constructors
-    + equals
     + logical negation
 
 #### unimplemented:
