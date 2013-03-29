@@ -253,6 +253,12 @@ vec<T, L>  vec<T, L>::normalize() const
 } //normalize()
 
 template <typename T, unsigned int L>
+vec<T, L> vec<T, L>::diff(vector<T, L> B)
+{
+	return B - *this;
+}
+
+template <typename T, unsigned int L>
 vec<T, L>::~vec()
 {
 
