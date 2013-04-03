@@ -36,11 +36,9 @@ The specific class template aliases for basic primitives in the namespaces:
 #### specializations:
   - boolean specialization of vector class
     + constructors
-    + equals
     + logical negation
 
-#### unimplemented:
-
+#### unimplemented
   - whatever else I'm not thinking of at the moment
 
 Headers
