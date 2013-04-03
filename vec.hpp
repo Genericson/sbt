@@ -250,15 +250,15 @@ public:
 	///
 	/// \return difference vector
 	/////////////////////////////////////////////////
-	vec<T, L> diff( vect<T, L> b) const;
+	vec<T, L> diff( vec<T, L> b) const;
 	
 	/////////////////////////////////////////////////
-	/// \brief Calculates a vector that represents the midpoint from `this` and `b`
+	/// \brief Calculates a vector that spans half-way from `this` to `b`
 	/// (B - A) * 0.5 
 	///
 	/// \return midpoint
 	/////////////////////////////////////////////////
-	vec<T, L> diff( vect<T, L> b) const;
+	vec<T, L> mid( vec<T, L> b) const;
 	
     /////////////////////////////////////////////////
     /// \brief Destructor

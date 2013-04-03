@@ -186,7 +186,7 @@ vec<T, L> vec<T, L>::operator+ (const vec<T, L>& v) const
 {
     vec<T, L> temp;
     for(int i = 0; i < L; i++)
-        temp[i] = (*this)[i] + v;
+        temp[i] = (*this)[i] + v[i];
     return temp;
 } //operator+(vec)
 
@@ -195,7 +195,7 @@ vec<T, L> vec<T, L>::operator- (const vec<T, L>& v) const
 {
     vec<T, L> temp;
     for(int i = 0; i < L; i++)
-        temp[i] = (*this)[i] - v;
+        temp[i] = (*this)[i] - v[i];
     return temp;
 } //operator-(vec)
 
@@ -253,15 +253,15 @@ vec<T, L>  vec<T, L>::normalize() const
 } //normalize()
 
 template <typename T, unsigned int L>
-vec<T, L> vec<T, L>::diff(vector<T, L> B)
+vec<T, L> vec<T, L>::diff( vec<T, L> b ) const
 {
-	return B - *this;
+	return b - *this;
 }
 
 template <typename T, unsigned int L>
-vec<T, L> vec<T, L>::mid(vector<T, L> B)
+vec<T, L> vec<T, L>::mid( vec<T, L> b ) const
 {
-	return 0.5 * (B - *this);
+	return 0.5 * (b - *this);
 }
 
 template <typename T, unsigned int L>
