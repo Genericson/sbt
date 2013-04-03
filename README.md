@@ -38,10 +38,7 @@ The specific class template aliases for basic primitives in the namespaces:
     + constructors
     + logical negation
 
-#### unimplemented:
-
-  - midpoint method
-  - distance/difference method
+#### unimplemented
   - whatever else I'm not thinking of at the moment
 
 Headers
