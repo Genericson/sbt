@@ -24,11 +24,11 @@ implement the mathematical operators.
   - dot product
   - cross product for 3D vectors
 
-The specific class template aliases for basic primitives are in the namespaces:
+#### nested namespaces:
   - sbt::fvec - float type
   - sbt::dvec - double type
   - sbt::ivec - signed and unsigned int types
-  - sbt::bvec - bool type (with specialized methods)
+  - sbt::bvec - bool type
 
 #### specializations:
   - boolean specialization of vector class
