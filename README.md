@@ -1,7 +1,7 @@
 Sumbeard's Tools (SBT)
 ======================
 
-SBT includes a mathematical vector template class. SBT is open source (see license in sourcecode). It was created primarily to practice working with C++ templates and meta-programming. If you were looking for something more extensive, take a look at GLM (OpenGL Mathematics). Keep in mind that these classes have not been thoroughly tested and may contain runtime surprises.
+SBT includes a mathematical vector template class. SBT is open source (see license in sourcecode). It was created primarily to practice working with C++ templates and meta-programming. If you were looking for something more extensive, take a look at GLM (OpenGL Mathematics). Keep in mind that SBT has not been thoroughly tested and may contain runtime surprises.
 
 Current Features
 -----------------
