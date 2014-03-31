@@ -1,10 +1,7 @@
 Sumbeard's Tools (SBT)
 ======================
 
-SBT is a collection (well, maybe "collection" is too strong a word at this point)
-c++11 headers released as open source (see license in source files). Keep in mind
-that these classes have not been thoroughly tested and likely contain runtime 
-surprises.
+SBT includes a mathematical vector template class. The sourcecode for this project is It was created primarily to practice working with C++ templates and meta-programming. If you were looking for something more extensive, take a look at GLM (OpenGL Mathematics). Keep in mind that these classes have not been thoroughly tested and may contain runtime surprises.
 
 Current Features
 -----------------
@@ -27,11 +24,11 @@ implement the mathematical operators.
   - dot product
   - cross product for 3D vectors
 
-The specific class template aliases for basic primitives in the namespaces:
+The specific class template aliases for basic primitives are in the namespaces:
   - sbt::fvec - float type
   - sbt::dvec - double type
   - sbt::ivec - signed and unsigned int types
-  - sbt::bvec - bool type
+  - sbt::bvec - bool type (with specialized methods)
 
 #### specializations:
   - boolean specialization of vector class
